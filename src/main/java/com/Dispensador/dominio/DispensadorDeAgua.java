@@ -2,7 +2,7 @@ package com.Dispensador.dominio;
 
 public class DispensadorDeAgua {
     public String marca;
-    public double capacidad = 0;
+    public double capacidad;
     public double cantidadActual;
     public Agua agua;
     public String color;
@@ -31,7 +31,7 @@ public class DispensadorDeAgua {
     }
 
     public void dispensar(double cantAServir, boolean tempAgua) {
-        if (cantAServir <= this.cantidadActual) {
+        if ((cantAServir <= this.cantidadActual)&&(cantAServir!=0)) {
             if (tempAgua == true) { // Para agua fria
                 this.cantidadActual -= cantAServir;
                 System.out.println("Se ha dispensado " + cantAServir + " ml de agua fria ");
@@ -45,6 +45,4 @@ public class DispensadorDeAgua {
             System.out.println("No se ha podido servir el agua");
         }
     }
-
-
 }
