@@ -4,7 +4,7 @@ public class Snack {
     private String nombre;
     private String codigo;
     private long valor;
-    private long cantidad;
+    private long cantidad = 6;
 
     public Snack(String nombre, String codigo, long valor) {
         this.nombre = nombre;
@@ -40,8 +40,8 @@ public class Snack {
         return cantidad;
     }
 
-    public void setCantidad(long cantidad) {
+    public long setCantidad(long cantidad) {
         this.cantidad = cantidad;
+        return cantidad;
     }
-
 }
