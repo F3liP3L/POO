@@ -16,7 +16,7 @@ public class DispensadorDeSnack {
 
     public void agregar(String nombre, String codigo, long valor) {
         Snack snackAAgregar = new Snack(nombre, codigo, valor);
-        if ((this.snacks.size() + 1) <= this.capacidad){
+        if ((this.snacks.size()+1) <= this.capacidad){
             this.snacks.add(snackAAgregar);
         } else {
             System.out.println("No se pueden agregar mas snacks, Has excedido el limite.");
@@ -99,7 +99,7 @@ public class DispensadorDeSnack {
         List<Snack> snackAgotados = this.snacks.stream()
                 .filter(snack -> snack.getCantidad()==0)
                 .collect(Collectors.toList());
-        if (snackAgotados != null) {
+        if ((snackAgotados != null)&&(snackAgotados.size()>0)) {
             System.out.println("Snacks agotados: ");
             snackAgotados.forEach(snackD -> System.out.println(snackD.getNombre()+" --> "+snackD.getValor()));
             return snackAgotados;
@@ -113,7 +113,7 @@ public class DispensadorDeSnack {
         List<Snack> snackDisponibles = this.snacks.stream()
                 .filter(snack -> snack.getCantidad()>0)
                 .collect(Collectors.toList());
-        if (snackDisponibles != null) {
+        if ((snackDisponibles != null)&&(snackDisponibles.size()>0)) {
             System.out.println("Snacks disponibles: ");
             snackDisponibles.forEach(snackD -> System.out.println(snackD.getNombre()+" --> "+snackD.getValor()));
             return snackDisponibles;
@@ -148,7 +148,4 @@ public class DispensadorDeSnack {
         this.snacks.forEach(snack -> System.out.println(snack.getNombre() + " "
                 + snack.getCodigo() + " --> " + snack.getValor() + " cantidad: " + snack.getCantidad()));
     }
-
-
-
 }

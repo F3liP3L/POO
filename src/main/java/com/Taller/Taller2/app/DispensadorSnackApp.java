@@ -47,7 +47,7 @@ public class DispensadorSnackApp {
         autoSnack.aumentarSnack("ms4l", 4);
         autoSnack.aumentarSnack("s3rl", 23);
         autoSnack.cantidadSnack("ms4l");
-
-
+        autoSnack.aumentarSnack("z4k2", 2);
+        autoSnack.snackAgotados();
     }
 }
