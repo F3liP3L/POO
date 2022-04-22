@@ -33,50 +33,26 @@ public class CalculadoraAPP {
 
             List<Double> numerosAOperar = new ArrayList<>();
             boolean pudoCastear = true;
-            boolean dividioCorrectamente = true;
             double resultado = 0;
-            double resultadoDiv = 0;
 
             do {
                 try {
                     int opcion = 0;
                     while ((opcion==0)) {
                         double numero = Double.parseDouble((String) JOptionPane.showInputDialog(null,
-                                "Ingrese un numero", TITULO, 0, iconoSecundario, null, 0));
+                                "Ingrese un numero (Diferente de cero) ", TITULO, 0, iconoSecundario, null, 0));
                         pudoCastear = true;
                         opcion = JOptionPane.showConfirmDialog(null, "Desea ingresar un nuevo numero");
-                        numerosAOperar.add(numero);
+                        if (numero!=0) {
+                            numerosAOperar.add(numero);
+                        } else {
+                            mostrarMensaje("El numero no fue agregado. ");
+                        }
                     }
                 } catch (NumberFormatException e) {
                     pudoCastear = false;
                 }
             } while (!pudoCastear);
-
-            /* Solo para dividir */
-
-//            do {
-//                try {
-//                    int opcion = 0;
-//                    while ((opcion==0)) {
-//                        double numeroDiv = Double.parseDouble((String) JOptionPane.showInputDialog(null,
-//                                "Ingrese un numero", TITULO, 0, iconoSecundario, null, 0));
-//                        pudoCastear = true;
-//                        opcion = JOptionPane.showConfirmDialog(null, "Desea ingresar un nuevo numero");
-//                        if (numeroDiv != 0) {
-//                            numerosAOperar.add(numeroDiv);
-//                        } else {
-//                            mostrarMensaje("NO SE PUEDEN AGREGAR CEROS");
-//                        }
-//                    }
-//                } catch (NumberFormatException e) {
-//                    pudoCastear = false;
-//                }
-//            } while (!pudoCastear);
-
-
-
-
-            /* Queda Pendiente arreglar la division de varios numeros o */
 
             switch (opcionElegida) {
                 case SUMAR: {
