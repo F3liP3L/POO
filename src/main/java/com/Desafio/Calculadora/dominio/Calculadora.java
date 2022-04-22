@@ -26,16 +26,19 @@ public class Calculadora {
         }
         return multiplicacion;
     }
+
     public static double dividir (List<Double> numeros, boolean redondeo) {
         if (redondeo) {
             return redondear(numeros.stream().mapToDouble(nro -> nro).reduce((left, right) -> left/right).getAsDouble());
         }
-        return numeros.stream().mapToDouble(nro -> nro).reduce((left, right) -> left/right).getAsDouble();
+         return numeros.stream().mapToDouble(nro -> nro).reduce((left, right) -> left/right).getAsDouble();
     }
 
     public static double redondear (double numero) { // redondeando a 2 cifras
         return Math.round(numero*100.0)/100.0;
     }
+
+
 
 }
 

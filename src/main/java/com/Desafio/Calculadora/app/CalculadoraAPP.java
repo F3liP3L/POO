@@ -10,16 +10,13 @@ public class CalculadoraAPP {
 
     public static ImageIcon iconoSecundario = new ImageIcon(Objects.requireNonNull(CalculadoraAPP.class.getResource("/imagenes/calculadora.png")));
     public static ImageIcon iconoPrincipal = new ImageIcon(Objects.requireNonNull(CalculadoraAPP.class.getResource("/imagenes/icono.gif")));
+//    public static ImageIcon iconoNumero = new ImageIcon(Objects.requireNonNull(CalculadoraAPP.class.getResource("/imagenes/Icono-numero.png")));
 
     public static final JCheckBox REDONDEAR = new JCheckBox("Redondear"); // Boton de redondear.
 
     public static final Object[] OPCIONES = Arrays.asList("Sumar", "Resta", "Multiplicar", "Division", REDONDEAR).toArray();
 
-    public static final int CERRAR = -1;
-    public static final int SUMAR = 0;
-    public static final int RESTAR = 1;
-    public static final int MULTIPLICAR = 2;
-    public static final int DIVIDIR = 3;
+    public static final int CERRAR = -1, SUMAR = 0 , RESTAR = 1 , MULTIPLICAR = 2 , DIVIDIR = 3;
 
     public static final String TITULO = "Calculadora";
 
@@ -35,34 +32,53 @@ public class CalculadoraAPP {
           }
 
             List<Double> numerosAOperar = new ArrayList<>();
-            boolean pudoCastear;
-            boolean respuesta = true;
+            boolean pudoCastear = true;
             boolean dividioCorrectamente = true;
             double resultado = 0;
-            int rango = 0;
+            double resultadoDiv = 0;
 
             do {
                 try {
-                    rango = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de numeros a Operar: "));
-                    for (int i = 0; i<rango; i++) {
+                    int opcion = 0;
+                    while ((opcion==0)) {
                         double numero = Double.parseDouble((String) JOptionPane.showInputDialog(null,
                                 "Ingrese un numero", TITULO, 0, iconoSecundario, null, 0));
+                        pudoCastear = true;
+                        opcion = JOptionPane.showConfirmDialog(null, "Desea ingresar un nuevo numero");
                         numerosAOperar.add(numero);
                     }
-//                    respuesta = numerosAOperar.stream().anyMatch(nro ->nro==0);
-                    pudoCastear = true;
-                } catch (Exception e) {
+                } catch (NumberFormatException e) {
                     pudoCastear = false;
-              }
-            } while ((!pudoCastear||rango<=0));
+                }
+            } while (!pudoCastear);
+
+            /* Solo para dividir */
+
+//            do {
+//                try {
+//                    int opcion = 0;
+//                    while ((opcion==0)) {
+//                        double numeroDiv = Double.parseDouble((String) JOptionPane.showInputDialog(null,
+//                                "Ingrese un numero", TITULO, 0, iconoSecundario, null, 0));
+//                        pudoCastear = true;
+//                        opcion = JOptionPane.showConfirmDialog(null, "Desea ingresar un nuevo numero");
+//                        if (numeroDiv != 0) {
+//                            numerosAOperar.add(numeroDiv);
+//                        } else {
+//                            mostrarMensaje("NO SE PUEDEN AGREGAR CEROS");
+//                        }
+//                    }
+//                } catch (NumberFormatException e) {
+//                    pudoCastear = false;
+//                }
+//            } while (!pudoCastear);
+
+
+
 
             /* Queda Pendiente arreglar la division de varios numeros o */
 
             switch (opcionElegida) {
-//                case CERRAR:{
-//                    System.exit(0);
-//                    break;
-//                }
                 case SUMAR: {
                     resultado = Calculadora.sumar(numerosAOperar, REDONDEAR.isSelected());
                     break;
@@ -76,14 +92,11 @@ public class CalculadoraAPP {
                     break;
                 }
                 case DIVIDIR: {
-                    System.out.println(resultado = Calculadora.dividir(numerosAOperar, REDONDEAR.isSelected()));
+                    resultado = Calculadora.dividir(numerosAOperar, REDONDEAR.isSelected());
                     break;
                 }
-//                default:
-//                    JOptionPane.showMessageDialog(null, "Opcion invalida", "ERROR",
-//                            JOptionPane.ERROR_MESSAGE);
             }
-            mostrarMensaje("El resultado es: " + resultado);
+                 mostrarMensaje("El resultado es: " + resultado);
             }
           }
 
