@@ -7,10 +7,9 @@ import java.util.*;
 
 public class CalculadoraAPP {
 
-
     public static ImageIcon iconoSecundario = new ImageIcon(Objects.requireNonNull(CalculadoraAPP.class.getResource("/imagenes/calculadora.png")));
     public static ImageIcon iconoPrincipal = new ImageIcon(Objects.requireNonNull(CalculadoraAPP.class.getResource("/imagenes/icono.gif")));
-//    public static ImageIcon iconoNumero = new ImageIcon(Objects.requireNonNull(CalculadoraAPP.class.getResource("/imagenes/Icono-numero.png")));
+//  public static ImageIcon iconoNumero = new ImageIcon(Objects.requireNonNull(CalculadoraAPP.class.getResource("/imagenes/Icono-numero.png")));
 
     public static final JCheckBox REDONDEAR = new JCheckBox("Redondear"); // Boton de redondear.
 
@@ -42,7 +41,7 @@ public class CalculadoraAPP {
                         double numero = Double.parseDouble((String) JOptionPane.showInputDialog(null,
                                 "Ingrese un numero (Diferente de cero) ", TITULO, 0, iconoSecundario, null, 0));
                         pudoCastear = true;
-                        opcion = JOptionPane.showConfirmDialog(null, "Desea ingresar un nuevo numero");
+                        opcion = JOptionPane.showConfirmDialog(null, "Desea ingresar un nuevo numero", "Calculadora", JOptionPane.YES_NO_OPTION);
                         if (numero!=0) {
                             numerosAOperar.add(numero);
                         } else {

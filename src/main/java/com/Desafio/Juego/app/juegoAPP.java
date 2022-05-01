@@ -16,7 +16,7 @@ public class juegoAPP {
     public static final ImageIcon DERROTA = new ImageIcon(Objects.requireNonNull(juegoAPP.class.getResource("/imagenes/derrota.png")));
     public static final ImageIcon EMPATE = new ImageIcon(Objects.requireNonNull(juegoAPP.class.getResource("/imagenes/empate.png")));
 
-    public static final ImageIcon GOKU = new ImageIcon(Objects.requireNonNull(juegoAPP.class.getResource("/imagenes/Goku.jpg")));
+    public static final ImageIcon GOKU = new ImageIcon(Objects.requireNonNull(juegoAPP.class.getResource("/imagenes/Goku2.jpg")));
     public static final ImageIcon ITACHI = new ImageIcon(Objects.requireNonNull(juegoAPP.class.getResource("/imagenes/Itachi.jpg")));
     public static final ImageIcon PICCOLO = new ImageIcon(Objects.requireNonNull(juegoAPP.class.getResource("/imagenes/Piccolo.jpg")));
 
@@ -51,7 +51,7 @@ public class juegoAPP {
                 }
                     switch (opcionElegida) {
                         case INSTRUCCIONES: {
-                            mostrarMensaje("Elige una de las 3 opciones [Goku, Itachi, YutaGOD]\n" +
+                            mostrarMensaje("Elige una de las 3 opciones [Goku, Itachi, Piccolo]\n" +
                                 " * Itachi vence a Goku \n" +
                                 " * Goku vence a Piccolo \n" +
                                 " * Piccolo vence a Itachi." , ICONO_INSTRUCCIONES);
@@ -63,11 +63,11 @@ public class juegoAPP {
                             if (jugadaUsuario.equals("Goku")&&(personajeComputador=="Piccolo")||(jugadaUsuario.equals("Itachi")&&(personajeComputador=="Goku"))||jugadaUsuario.equals("Piccolo")&&(personajeComputador=="Itachi")) {
                                 victoria++;
                                 mostrarMensaje("Felicidades! :] ", VICTORIA);
-                                mostrarMensaje("La maquina eligio a " + personajeComputador,IMAGEN_PERSONAJES.get(computador));
+                                mostrarMensaje("La computadora eligio a " + personajeComputador,IMAGEN_PERSONAJES.get(computador));
                             } else if (jugadaUsuario.equals("Goku")&&(personajeComputador=="Itachi")||jugadaUsuario.equals("Itachi")&&(personajeComputador=="Piccolo")||jugadaUsuario.equals("Piccolo")&&(personajeComputador=="Goku")) {
                                 derrota++;
                                 mostrarMensaje("Has Perdido :[ " , DERROTA);
-                                mostrarMensaje("La maquina eligio a " + personajeComputador,IMAGEN_PERSONAJES.get(computador));
+                                mostrarMensaje("La computadora eligio a " + personajeComputador,IMAGEN_PERSONAJES.get(computador));
                             } else {
                                 empate++;
                                 mostrarMensaje("EMPATE!!! :| ", EMPATE);
@@ -80,7 +80,6 @@ public class juegoAPP {
                                     + "\nHan quedado en empate: " + empate, ICONO_RESULTADO);
                             break;
                 }
-
         }
     }
 
