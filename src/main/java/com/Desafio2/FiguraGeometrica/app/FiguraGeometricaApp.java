@@ -1,6 +1,6 @@
-package com.FiguraGeometrica.app;
+package com.Desafio2.FiguraGeometrica.app;
 
-import com.FiguraGeometrica.dominio.*;
+import com.Desafio2.FiguraGeometrica.dominio.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +12,9 @@ public class FiguraGeometricaApp {
         Cuadrado cuadrado = new Cuadrado(5);
         Rectangulo rectangulo = new Rectangulo(4, 2);
         TrianguloRectangulo trianguloRectangulo = new TrianguloRectangulo(4, 10);
-        Rombo rombo = new Rombo(2, 1);
-        PoligonoRegular poligonoRegular = new PoligonoRegular(6, 12);
+        Rombo rombo = new Rombo(12, 16);
+        PoligonoRegular poligonoRegular = new PoligonoRegular(1, 12);
+
 
         List<FiguraGeometrica> figuras = new ArrayList<>();
         figuras.add(circulo);

@@ -9,7 +9,7 @@ public class Celular {
     private boolean estado;
     private Bateria bateria;
 
-    /* Esto se ha realizado a nivel de ejemplo. hacerlo mas cache */
+    /* TODO Esto se ha realizado a nivel de ejemplo. hacerlo mas cache */
 
     public void encender () {
         this.estado = true;

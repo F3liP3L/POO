@@ -1,4 +1,4 @@
-package com.FiguraGeometrica.dominio;
+package com.Desafio2.FiguraGeometrica.dominio;
 
 public class TrianguloRectangulo extends FiguraGeometrica {
     public double base;

@@ -16,7 +16,7 @@ public class juegoAPP {
     public static final ImageIcon DERROTA = new ImageIcon(Objects.requireNonNull(juegoAPP.class.getResource("/imagenes/derrota.png")));
     public static final ImageIcon EMPATE = new ImageIcon(Objects.requireNonNull(juegoAPP.class.getResource("/imagenes/empate.png")));
 
-    public static final ImageIcon GOKU = new ImageIcon(Objects.requireNonNull(juegoAPP.class.getResource("/imagenes/Goku2.jpg")));
+    public static final ImageIcon GOKU = new ImageIcon(Objects.requireNonNull(juegoAPP.class.getResource("/imagenes/Goku.jpg")));
     public static final ImageIcon ITACHI = new ImageIcon(Objects.requireNonNull(juegoAPP.class.getResource("/imagenes/Itachi.jpg")));
     public static final ImageIcon PICCOLO = new ImageIcon(Objects.requireNonNull(juegoAPP.class.getResource("/imagenes/Piccolo.jpg")));
 

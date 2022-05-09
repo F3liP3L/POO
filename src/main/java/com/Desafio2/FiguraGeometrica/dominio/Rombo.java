@@ -1,10 +1,11 @@
-package com.FiguraGeometrica.dominio;
+package com.Desafio2.FiguraGeometrica.dominio;
 
 public class Rombo extends TrianguloRectangulo {
-    public double diametro;
+    public double diametroMenor;
+    public double diametroMayor;
 
-    public Rombo(double base, double altura) {
-        super(base, altura);
+    public Rombo(double diametroMenor, double diametroMayor) {
+        super(diametroMenor/2, diametroMayor/2);
     }
 
     @Override

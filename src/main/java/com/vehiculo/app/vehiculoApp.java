@@ -14,14 +14,17 @@ public class vehiculoApp {
         Moto        moto        = new Moto("BMW", "GS1200", 18);
         Vehiculo    vehiculo    = new Carro("Renault", "4", 14);
 
-        System.out.println(taxi.getCapacidad());
+
+
+       /* System.out.println(taxi.getCapacidad());
         taxi.bajarPasajero();
         taxi.subirPasajero(3);
         taxi.bajarPasajero();
         taxi.bajarPasajero();
-        taxi.subirPasajero(2);
+        taxi.subirPasajero(2); */
 
         List<Vehiculo> vehiculos = Arrays.asList(bicicleta, bici2, taxi, carro, moto, vehiculo);
+
         System.out.println("\n|--- Probando la herencia y el poliformiso en metodo acelerar ---|\n");
 
         for (Vehiculo v : vehiculos) {

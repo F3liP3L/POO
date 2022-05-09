@@ -1,4 +1,4 @@
-package com.FiguraGeometrica.dominio;
+package com.Desafio2.FiguraGeometrica.dominio;
 
 public abstract class FiguraGeometrica {
 
