@@ -16,10 +16,6 @@ public class FacturaConIva extends Factura {
         return getValor() + this.calcularIva();
     }
 
-    public short getValorIva() {
-        return valorIva;
-    }
-
     @Override
     public String toString() {
         return "Factura con Iva";

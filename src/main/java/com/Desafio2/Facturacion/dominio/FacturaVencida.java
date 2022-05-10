@@ -11,13 +11,12 @@ public class FacturaVencida extends Factura {
 
     @Override
     public long calcularTotal() {
-        return getValor()*this.getDiasVencidos()*VALOR_DIA_VENCIDO;
+        return getValor() + this.getDiasVencidos()*VALOR_DIA_VENCIDO;
     }
 
     public int getDiasVencidos() {
         LocalDate fechaActual = LocalDate.now();
-        System.out.println("Dias de diferencia: " + ChronoUnit.DAYS.between(fechaActual, getFechaVencimiento()));
+        //System.out.println("Dias de diferencia: " + ChronoUnit.DAYS.between(getFechaVencimiento(), fechaActual));
         return (int) ChronoUnit.DAYS.between(getFechaVencimiento(), fechaActual);
-
     }
 }
