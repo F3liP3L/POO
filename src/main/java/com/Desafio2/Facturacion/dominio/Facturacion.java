@@ -35,7 +35,7 @@ public class Facturacion {
 
     public Factura getFacturaMasCara() {
         Factura facturaMasCostosa = this.facturas.stream()
-                .max(Comparator.comparing(factura -> factura.calcularTotal()))
+                .max(Comparator.comparing(Factura::calcularTotal))
                 .orElseThrow(NoSuchElementException::new);
         return facturaMasCostosa;
     }
@@ -50,7 +50,7 @@ public class Facturacion {
                 .map(fact -> (FacturaDescuento) fact).collect(Collectors.toList());
     }
 
-    public boolean empiezaPorVocal(String cliente) {
+    private boolean empiezaPorVocal(String cliente) {
         List<String> vocales = Arrays.asList("a","e","i","o","u");
         return vocales.contains(String.valueOf(cliente.toLowerCase(Locale.ROOT).charAt(0)));
     }

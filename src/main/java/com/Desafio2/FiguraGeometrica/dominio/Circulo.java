@@ -1,6 +1,6 @@
 package com.Desafio2.FiguraGeometrica.dominio;
 
-public class Circulo extends FiguraGeometrica {
+public class Circulo extends FiguraGeometrica implements IVolumen {
     public double radio;
 
     public Circulo(double radio) {
@@ -20,5 +20,10 @@ public class Circulo extends FiguraGeometrica {
     @Override
     public String toString() {
         return "Circulo";
+    }
+
+    @Override
+    public double hallarVolumen() {
+        return (4/3)*Math.PI*Math.pow(this.radio, 3);
     }
 }

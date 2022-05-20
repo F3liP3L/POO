@@ -11,7 +11,7 @@ public class FacturaVencida extends Factura {
 
     @Override
     public long calcularTotal() {
-        return getValor() + this.getDiasVencidos()*VALOR_DIA_VENCIDO;
+        return getValor() + (long) this.getDiasVencidos() *VALOR_DIA_VENCIDO;
     }
 
     public int getDiasVencidos() {
