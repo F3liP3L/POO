@@ -13,13 +13,7 @@ public class Imagen implements Viruseable {
 
     @Override
     public boolean tieneVirus() {
-        if (this.nombre.contains(".jpg")) {
-            return false;
-        } else if (this.nombre.contains(".png")) {
-            return false;
-        } else {
-            return true;
-        }
+       return !validandoImagen(this.nombre);
     }
 
     @Override
@@ -27,9 +21,14 @@ public class Imagen implements Viruseable {
         return this.nombre;
     }
 
-    /* TODO crear un metodo que lea tipos de imagenes de una lista y verifique si estan o no estan.
     public static boolean validandoImagen(String nombre) {
-        List<String> tiposFormatos = Arrays.asList(".img",".png",".gif",".tiff",".psd", ".jpg", ".jpge");
+        List<String> tiposFormatos = Arrays.asList(".png",".gif",".tiff",".psd", ".jpg", ".jpge");
+        for (String formato: tiposFormatos) {
+            if(nombre.toLowerCase(Locale.ROOT).contains(formato)) {
+                return true;
+            }
         }
-     */
+                return false;
+    }
+     
 }
