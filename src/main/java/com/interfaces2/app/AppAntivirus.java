@@ -24,5 +24,9 @@ public class AppAntivirus {
         System.out.println("\t -------------------------------------");
 
         norton.escanear();
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/main
     }
 }
